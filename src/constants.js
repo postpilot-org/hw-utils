@@ -65,3 +65,22 @@ export const US_STATES = [
   { name: 'Wisconsin', slug: 'wisconsin', abbr: 'WI' },
   { name: 'Wyoming', slug: 'wyoming', abbr: 'WY' },
 ]
+
+export const TWO_LETTER_NAMES = [
+  'bo',
+  'ty',
+  'al',
+  'jo',
+  'cy',
+  'ed',
+  'li',
+  'ro',
+  'em',
+  'lo',
+  'ki',
+  'oz',
+  'mo',
+  'lu',
+  'ki',
+  'vi',
+]

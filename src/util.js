@@ -1,4 +1,15 @@
-import { VALID_MERGE_VARS, INVALID_CHARACTERS, US_STATES } from './constants.js'
+import {
+  VALID_MERGE_VARS,
+  INVALID_CHARACTERS,
+  US_STATES,
+  TWO_LETTER_NAMES,
+} from './constants.js'
+
+function toTitleCase(str = '') {
+  return str.replace(/\w\S*/g, function(txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+  })
+}
 
 export const usesInvalidCharacters = message => {
   return new RegExp(INVALID_CHARACTERS, 'g').test(message)
@@ -46,12 +57,6 @@ export const validateContactInfo = (contact = {}) => {
   const charLimits = [['firstName', 17], ['lastName', 17], ['company', 26]]
   const abbreviatables = ['street1', 'street2']
 
-  function toTitleCase(str = '') {
-    return str.replace(/\w\S*/g, function(txt) {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
-    })
-  }
-
   if (!contact.street1 && !contact.firstName) {
     errors.push({
       identifier: 'Contact',
@@ -80,8 +85,16 @@ export const validateContactInfo = (contact = {}) => {
   })
 
   // capitalize certain fields
-  shouldBeCapped.forEach(f => {
-    contact[f] = toTitleCase(contact[f])
+  shouldBeCapped.forEach(field => {
+    if (
+      field === 'firstName' &&
+      contact[field].length === 2 &&
+      !TWO_LETTER_NAMES.includes(contact[field].toLowerCase())
+    ) {
+      contact[field] = contact[field].toUpperCase()
+    } else {
+      contact[field] = toTitleCase(contact[field])
+    }
   })
 
   // limit max characters
@@ -127,13 +140,13 @@ export const validateContactInfo = (contact = {}) => {
   abbreviatables.forEach(a => {
     if (contact[a]) {
       contact[a] = contact[a]
-        .replace(/[Nn]orthwest/g, 'NW')
-        .replace(/[Ss]outhwest/g, 'SW')
-        .replace(/[Ss]outheast/g, 'SE')
-        .replace(/[Nn]ortheast/g, 'NE')
-        .replace(/[Ss]treet/g, 'St')
-        .replace(/[Aa]venue/g, 'Ave')
-        .replace(/[Bb]oulevard/g, 'Blvd')
+        .replace(/ [Nn]orthwest/g, ' NW')
+        .replace(/ [Ss]outhwest/g, ' SW')
+        .replace(/ [Ss]outheast/g, ' SE')
+        .replace(/ [Nn]ortheast/g, ' NE')
+        .replace(/ [Ss]treet/g, ' St')
+        .replace(/ [Aa]venue/g, ' Ave')
+        .replace(/ [Bb]oulevard/g, ' Blvd')
     }
   })
 

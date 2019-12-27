@@ -1,8 +1,8 @@
 import { constants, utils } from './index.js'
 
 const result = utils.validateContactInfo({
-  firstName: 'jack',
-  lastName: 'beau',
+  firstName: 'tj',
+  lastName: 'miller',
   street1: '123 test boulevard',
   state: 'al',
   city: 'montgomery',
