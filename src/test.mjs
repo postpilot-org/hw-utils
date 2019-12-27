@@ -1,4 +1,4 @@
-import { constants, utils } from './index.js'
+import { constants, utils } from './index.mjs'
 
 const result = utils.validateContactInfo({
   firstName: 'tj',

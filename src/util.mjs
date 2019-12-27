@@ -3,7 +3,7 @@ import {
   INVALID_CHARACTERS,
   US_STATES,
   TWO_LETTER_NAMES,
-} from './constants.js'
+} from './constants.mjs'
 
 function toTitleCase(str = '') {
   return str.replace(/\w\S*/g, function(txt) {
