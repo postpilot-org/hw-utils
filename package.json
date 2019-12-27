@@ -1,0 +1,21 @@
+{
+  "name": "hw-utils",
+  "version": "1.0.1",
+  "description": "Utils shared between the front and backend repos",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "lodash.startcase": "^4.4.0"
+  }
+}
