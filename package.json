@@ -1,6 +1,7 @@
 {
   "name": "hw-utils",
-  "version": "1.0.1",
+  "version": "1.0.3",
+  "type": "module",
   "description": "Utils shared between the front and backend repos",
   "main": "dist/index.js",
   "scripts": {
