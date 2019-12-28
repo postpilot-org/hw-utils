@@ -32,7 +32,7 @@ export const validateMergeVars = message => {
   }
 
   vars.forEach(mv => {
-    if (!constants.VALID_MERGE_VARS.includes(mv)) {
+    if (!VALID_MERGE_VARS.includes(mv)) {
       illegals.push(mv)
     }
   })
