@@ -84,3 +84,267 @@ export const TWO_LETTER_NAMES = [
   'ki',
   'vi',
 ]
+
+export const PLAN_DETAILS = {
+  tier_1: {
+    name: 'Occasional',
+    price: 0,
+    limit: 0,
+    overagePrice: 4.5,
+    features: [
+      {
+        key: 'Price per card',
+        value: '$4.50',
+      },
+      {
+        key: 'No cards included',
+        value: false,
+      },
+
+      {
+        key: '2 Team members',
+        value: true,
+      },
+      {
+        key: 'Support',
+        value: 'Email',
+      },
+      {
+        key: 'Sent within',
+        value: '72 hours',
+      },
+    ],
+  },
+  tier_2: {
+    name: 'Starter',
+    price: 75,
+    limit: 30,
+    overagePrice: 2.25,
+    features: [
+      {
+        key: '30 cards included',
+        value: true,
+      },
+      {
+        key: `$/card over 30`,
+        value: '$2.25',
+      },
+      {
+        key: 'Team members',
+        value: '3',
+      },
+      {
+        key: 'Support',
+        value: 'Email & Phone',
+      },
+      {
+        key: 'Sent within',
+        value: '48 hours',
+      },
+    ],
+  },
+  tier_3: {
+    name: 'Plus',
+    price: 225,
+    limit: 100,
+    overagePrice: 2.0,
+    features: [
+      {
+        key: '100 cards included',
+        value: true,
+      },
+      {
+        key: '$/card over 100',
+        value: '$2.00',
+      },
+      {
+        key: 'Team members',
+        value: '10',
+      },
+      {
+        key: 'Support',
+        value: 'Email & Phone',
+      },
+      {
+        key: 'Sent within',
+        value: '48 hours',
+      },
+    ],
+  },
+  tier_4: {
+    name: 'Pro',
+    price: 900,
+    limit: 500,
+    overagePrice: 1.75,
+    features: [
+      {
+        key: '500 cards included',
+        value: true,
+      },
+      {
+        key: '$/card over 500',
+        value: '$1.75',
+      },
+      {
+        key: 'Team members',
+        value: '25',
+      },
+      {
+        key: 'Support',
+        value: 'Email & Phone',
+      },
+      {
+        key: 'Sent within',
+        value: '24 hours',
+      },
+    ],
+  },
+  legacy_silver: {
+    name: 'Legacy Silver',
+    price: 30,
+    limit: 10,
+    overagePrice: 3.5,
+    features: [
+      {
+        key: '10 cards included',
+        value: true,
+      },
+      {
+        key: '$/card over 10',
+        value: '$3.50',
+      },
+      {
+        key: 'Support',
+        value: 'Email & Phone',
+      },
+      {
+        key: 'Sent within',
+        value: '72 hours',
+      },
+    ],
+  },
+
+  legacy_gold_40: {
+    name: 'Legacy Gold',
+    price: 40,
+    limit: 20,
+    overagePrice: 3.5,
+    features: [
+      {
+        key: '20 cards included',
+        value: true,
+      },
+      {
+        key: '$/card over 20',
+        value: '$3.50',
+      },
+      {
+        key: 'Support',
+        value: 'Email & Phone',
+      },
+      {
+        key: 'Sent within',
+        value: '72 hours',
+      },
+    ],
+  },
+
+  legacy_gold_50: {
+    name: 'Legacy Gold',
+    price: 50,
+    limit: 20,
+    overagePrice: 3.5,
+    features: [
+      {
+        key: '20 cards included',
+        value: true,
+      },
+      {
+        key: '$/card over 20',
+        value: '$3.50',
+      },
+      {
+        key: 'Support',
+        value: 'Email & Phone',
+      },
+      {
+        key: 'Sent within',
+        value: '72 hours',
+      },
+    ],
+  },
+
+  legacy_platinum_90: {
+    name: 'Legacy Platinum',
+    price: 90,
+    limit: 50,
+    overagePrice: 3.5,
+    features: [
+      {
+        key: '50 cards included',
+        value: true,
+      },
+      {
+        key: '$/card over 50',
+        value: '$3.50',
+      },
+      {
+        key: 'Support',
+        value: 'Email & Phone',
+      },
+      {
+        key: 'Sent within',
+        value: '72 hours',
+      },
+    ],
+  },
+
+  legacy_platinum_100: {
+    name: 'Legacy Platinum',
+    price: 100,
+    limit: 50,
+    overagePrice: 3.5,
+    features: [
+      {
+        key: '50 cards included',
+        value: true,
+      },
+      {
+        key: '$/card over 50',
+        value: '$3.50',
+      },
+      {
+        key: 'Support',
+        value: 'Email & Phone',
+      },
+      {
+        key: 'Sent within',
+        value: '72 hours',
+      },
+    ],
+  },
+  legacy_api: {
+    name: 'Legacy API',
+    price: 0,
+    limit: 0,
+    overagePrice: 1.99,
+    features: [
+      {
+        key: 'Price per card',
+        value: '$1.99',
+      },
+      {
+        key: 'Team members',
+        value: '10',
+      },
+      {
+        key: 'Support',
+        value: 'Email & Phone',
+      },
+      {
+        key: 'Sent within',
+        value: '48 hours',
+      },
+    ],
+  },
+}
