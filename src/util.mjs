@@ -165,6 +165,7 @@ export const validateContactInfo = (contact = {}) => {
 }
 
 export const interpolate = (str = '', obj) => {
+  if (!str) return ''
   return str.replace(/{([^{}]*)}/g, (textWithBrackets, textBetweenBrackets) => {
     var result = obj[textBetweenBrackets]
 
