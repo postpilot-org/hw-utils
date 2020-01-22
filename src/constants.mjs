@@ -347,4 +347,28 @@ export const PLAN_DETAILS = {
       },
     ],
   },
+  legacy_avalon: {
+    name: 'Legacy Avalon',
+    price: 0,
+    limit: 0,
+    overagePrice: 1.7,
+    features: [
+      {
+        key: 'Price per card',
+        value: '$1.70',
+      },
+      {
+        key: 'Team members',
+        value: '10',
+      },
+      {
+        key: 'Support',
+        value: 'Email & Phone',
+      },
+      {
+        key: 'Sent within',
+        value: '72 hours',
+      },
+    ],
+  },
 }
