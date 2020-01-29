@@ -139,7 +139,7 @@ export const validateContactInfo = (contact = {}) => {
   // shorten address where possible
   abbreviatables.forEach(a => {
     if (contact[a]) {
-      contact[a] = contact[a]
+      contact[a] = (contact[a] || '')
         .replace(/ [Nn]orthwest/g, ' NW')
         .replace(/ [Ss]outhwest/g, ' SW')
         .replace(/ [Ss]outheast/g, ' SE')
