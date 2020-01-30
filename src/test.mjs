@@ -4,7 +4,7 @@ const result = utils.validateContactInfo({
   firstName: 'jack mcKittreck',
   lastName: 'terry-Gables shaw',
   street1: '3338 SE thomas Avenue northwest',
-  street2: '',
+  street2: null,
   company: 'Google',
   state: 'alabama',
   city: 'Montgomery',
