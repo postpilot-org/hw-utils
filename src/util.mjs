@@ -5,9 +5,15 @@ import {
   TWO_LETTER_NAMES,
 } from './constants.mjs'
 
+// function toTitleCase(str = '') {
+//   return str.replace(/\w\S*/g, function(txt) {
+//     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+//   })
+// }
+
 function toTitleCase(str = '') {
-  return str.replace(/\w\S*/g, function(txt) {
-    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+  return str.replace(/(^|\s)([a-z])/g, function(m, p1, p2) {
+    return p1 + p2.toUpperCase()
   })
 }
 
