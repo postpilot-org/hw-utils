@@ -1,4 +1,4 @@
-export const INVALID_CHARACTERS = '[~`©™_|^®]'
+export const INVALID_CHARACTERS = '[~`©™_|><^®]'
 export const MAX_LINE_BREAKS = 5
 export const MAX_CHARS = 320
 
