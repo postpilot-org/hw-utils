@@ -372,7 +372,7 @@ export const PLAN_DETAILS = {
     ],
   },
   pure_meter_vip: {
-    name: 'VIP Plan',
+    name: 'VIP',
     price: 0,
     limit: 0,
     overagePrice: 0,
@@ -412,7 +412,7 @@ export const PLAN_DETAILS = {
     ],
   },
   pure_meter_super_vip: {
-    name: 'Super VIP Plan',
+    name: 'Super VIP',
     price: 0,
     limit: 0,
     overagePrice: 0,
@@ -444,6 +444,18 @@ export const PLAN_DETAILS = {
       {
         key: '10,000+ cards',
         value: '$1.59',
+      },
+    ],
+  },
+  pure_meter_scribbles: {
+    name: 'Scribbles',
+    price: 0,
+    limit: 0,
+    overagePrice: 0,
+    features: [
+      {
+        key: '1 - infinity cards',
+        value: '$0.35',
       },
     ],
   },
