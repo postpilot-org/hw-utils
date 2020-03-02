@@ -23,11 +23,11 @@ export const usesInvalidCharacters = message => {
 }
 
 export const stateAbbr = stateName => {
-  const stateObj = US_STATES.find(state => state.name === stateName)
-  if (!stateObj) {
-    return ''
-  }
-  return stateObj.abbr.toUpperCase()
+  const stateObj =
+    US_STATES.find(state => state.name === stateName) ||
+    US_STATES.find(state => state.abbr.toLowerCase() === stateName.toLowerCase())
+
+  return !stateObj ? '' : stateObj.abbr.toUpperCase()
 }
 
 export const validateMergeVars = message => {
