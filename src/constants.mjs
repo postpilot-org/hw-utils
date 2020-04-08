@@ -8,6 +8,7 @@ export const VALID_MERGE_VARS = [
   '{city}',
   '{state}',
   '{company}',
+  '{custom}',
 ]
 
 export const US_STATES = [
