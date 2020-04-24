@@ -1,6 +1,6 @@
 export const INVALID_CHARACTERS = '[~`©™_|><^®]'
 export const MAX_LINE_BREAKS = 5
-export const MAX_CHARS = 320
+export const MAX_CHARS = 400
 
 export const VALID_MERGE_VARS = [
   '{firstName}',
