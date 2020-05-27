@@ -380,7 +380,7 @@ export const PLAN_DETAILS = {
     features: [
       {
         key: '1 - 10 cards',
-        value: '$3.00',
+        value: '$2.75',
       },
       {
         key: '11 - 50 cards',
