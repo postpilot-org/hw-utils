@@ -412,6 +412,46 @@ export const PLAN_DETAILS = {
       },
     ],
   },
+  price_1GxvdFKJSKsxPz7vAiHrXr5M: {
+    name: 'VIP',
+    price: 0,
+    limit: 0,
+    overagePrice: 0,
+    features: [
+      {
+        key: '1 - 10 cards',
+        value: '$2.75',
+      },
+      {
+        key: '11 - 50 cards',
+        value: '$2.50',
+      },
+      {
+        key: '51 - 200 cards',
+        value: '$2.25',
+      },
+      {
+        key: '201 - 500 cards',
+        value: '$2.00',
+      },
+      {
+        key: '501 - 1,000 cards',
+        value: '$1.85',
+      },
+      {
+        key: '1,001 - 5,000 cards',
+        value: '$1.71',
+      },
+      {
+        key: '5,001 - 10,000 cards',
+        value: '$1.68',
+      },
+      {
+        key: '10,000+ cards',
+        value: '$1.65',
+      },
+    ],
+  },
   pure_meter_super_vip: {
     name: 'Super VIP',
     price: 0,
