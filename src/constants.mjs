@@ -488,15 +488,32 @@ export const PLAN_DETAILS = {
       },
     ],
   },
-  pure_meter_scribbles: {
-    name: 'Scribbles',
+  // United Shore (UWM)
+  price_1H0BGMKJSKsxPz7vL9yG5Rul: {
+    name: 'Custom Billing for United Shore',
     price: 0,
     limit: 0,
     overagePrice: 0,
     features: [
       {
-        key: '1 - infinity cards',
-        value: '$0.35',
+        key: '1 - 3000 cards',
+        value: '$4,800 flat',
+      },
+      {
+        key: '3001 - 4999 cards',
+        value: '$1.60',
+      },
+      {
+        key: '5000 - 9999 cards',
+        value: '$1.55',
+      },
+      {
+        key: '10,000 - 14,999 cards',
+        value: '$1.50',
+      },
+      {
+        key: '15,000+ cards',
+        value: '$1.47',
       },
     ],
   },
