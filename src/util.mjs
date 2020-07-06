@@ -61,7 +61,12 @@ export const validateContactInfo = (contact = {}) => {
   ]
   const shouldBeCapped = ['firstName', 'lastName', 'street1', 'street2', 'city', 'state']
   const requiredFields = ['street1', 'city', 'state', 'zip']
-  const charLimits = [['firstName', 17], ['lastName', 17], ['company', 26]]
+  const charLimits = [
+    ['street1', 27],
+    ['firstName', 17],
+    ['lastName', 17],
+    ['company', 26],
+  ]
   const abbreviatables = ['street1', 'street2']
 
   if (!contact.street1 && !contact.firstName) {
@@ -101,18 +106,6 @@ export const validateContactInfo = (contact = {}) => {
       contact[field] = contact[field].toUpperCase()
     } else {
       contact[field] = toTitleCase(contact[field])
-    }
-  })
-
-  // limit max characters
-  charLimits.forEach(f => {
-    const fieldLength = (contact[f[0]] || '').length || 0
-    const maxLength = f[1]
-    if (fieldLength > maxLength) {
-      errors.push({
-        identifier: f[0],
-        errorMsg: `cannot be more than ${maxLength} characters`,
-      })
     }
   })
 
@@ -157,6 +150,18 @@ export const validateContactInfo = (contact = {}) => {
         .replace(/ [SS][Ee] /g, ' SE ')
         .replace(/ [Aa]venue/g, ' Ave')
         .replace(/ [Bb]oulevard/g, ' Blvd')
+    }
+  })
+
+  // limit max characters
+  charLimits.forEach(f => {
+    const fieldLength = (contact[f[0]] || '').length || 0
+    const maxLength = f[1]
+    if (fieldLength > maxLength) {
+      errors.push({
+        identifier: f[0],
+        errorMsg: `cannot be more than ${maxLength} characters`,
+      })
     }
   })
 

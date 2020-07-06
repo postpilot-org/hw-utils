@@ -299,7 +299,6 @@ export const PLAN_DETAILS = {
       },
     ],
   },
-
   legacy_platinum_100: {
     name: 'Legacy Platinum',
     price: 100,
