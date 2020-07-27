@@ -5,6 +5,8 @@ export const MAX_CHARS = 400
 export const VALID_MERGE_VARS = [
   '{firstName}',
   '{lastName}',
+  '{street1}',
+  '{street2}',
   '{city}',
   '{state}',
   '{company}',
