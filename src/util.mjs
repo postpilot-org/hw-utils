@@ -1,9 +1,4 @@
-import {
-  VALID_MERGE_VARS,
-  INVALID_CHARACTERS,
-  US_STATES,
-  TWO_LETTER_NAMES,
-} from './constants.mjs'
+import { VALID_MERGE_VARS, INVALID_CHARACTERS, US_STATES, TWO_LETTER_NAMES } from './constants.mjs'
 
 // function toTitleCase(str = '') {
 //   return str.replace(/\w\S*/g, function(txt) {
@@ -13,7 +8,7 @@ import {
 
 function toTitleCase(str) {
   str = str ? str : ''
-  return str.replace(/(^|\s)([a-z])/g, function(m, p1, p2) {
+  return str.replace(/(^|\s)([a-z])/g, function (m, p1, p2) {
     return p1 + p2.toUpperCase()
   })
 }
@@ -49,16 +44,7 @@ export const validateMergeVars = message => {
 
 export const validateContactInfo = (contact = {}) => {
   let errors = []
-  const fields = [
-    'firstName',
-    'lastName',
-    'street1',
-    'street2',
-    'city',
-    'state',
-    'zip',
-    'company',
-  ]
+  const fields = ['firstName', 'lastName', 'street1', 'street2', 'city', 'state', 'zip', 'company']
   const shouldBeCapped = ['firstName', 'lastName', 'street1', 'street2', 'city', 'state']
   const requiredFields = ['street1', 'city', 'state', 'zip']
   const charLimits = [
@@ -112,9 +98,7 @@ export const validateContactInfo = (contact = {}) => {
   // convert state name to initials and capitalize
   if (contact.state) {
     if (contact.state.length === 2) {
-      const stateObj = US_STATES.find(
-        state => state.abbr.toLowerCase() === contact.state.toLowerCase()
-      )
+      const stateObj = US_STATES.find(state => state.abbr.toLowerCase() === contact.state.toLowerCase())
       if (!stateObj) {
         errors.push({
           identifier: contact.state,
@@ -183,8 +167,9 @@ export const interpolate = (str = '', obj) => {
   if (!str) return ''
   return str.replace(/{([^{}]*)}/g, (textWithBrackets, textBetweenBrackets) => {
     var result = obj[textBetweenBrackets]
-
     if (typeof result === 'string' || typeof result === 'number') {
+      // replace curly single and double quotes with straight ones
+      result = result.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"')
       return result
     } else {
       return textWithBrackets
