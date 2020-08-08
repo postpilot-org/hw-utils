@@ -193,17 +193,17 @@ export const interpolate = (str = '', obj) => {
 }
 
 export const getCreditPrice = numberNeeded => {
-  if (numberNeeded <= 10) {
+  if (numberNeeded <= 99) {
+    return 2.99
+  } else if (numberNeeded > 99 && numberNeeded <= 249) {
     return 2.75
-  } else if (numberNeeded > 10 && numberNeeded <= 50) {
-    return 2.5
-  } else if (numberNeeded > 50 && numberNeeded <= 200) {
-    return 2.25
-  } else if (numberNeeded > 200 && numberNeeded <= 500) {
-    return 2.0
-  } else if (numberNeeded > 500 && numberNeeded <= 1000) {
-    return 1.85
+  } else if (numberNeeded > 249 && numberNeeded <= 499) {
+    return 2.6
+  } else if (numberNeeded > 499 && numberNeeded <= 999) {
+    return 2.45
+  } else if (numberNeeded > 999 && numberNeeded <= 2500) {
+    return 2.3
   } else {
-    return 2.75
+    return 2.99
   }
 }
