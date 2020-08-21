@@ -1,4 +1,9 @@
-import { VALID_MERGE_VARS, INVALID_CHARACTERS, US_STATES, TWO_LETTER_NAMES } from './constants.mjs'
+import {
+  VALID_MERGE_VARS,
+  INVALID_CHARACTERS,
+  US_STATES,
+  TWO_LETTER_NAMES,
+} from './constants.mjs'
 
 // function toTitleCase(str = '') {
 //   return str.replace(/\w\S*/g, function(txt) {
@@ -8,7 +13,7 @@ import { VALID_MERGE_VARS, INVALID_CHARACTERS, US_STATES, TWO_LETTER_NAMES } fro
 
 function toTitleCase(str) {
   str = str ? str : ''
-  return str.replace(/(^|\s)([a-z])/g, function (m, p1, p2) {
+  return str.replace(/(^|\s)([a-z])/g, function(m, p1, p2) {
     return p1 + p2.toUpperCase()
   })
 }
@@ -44,7 +49,16 @@ export const validateMergeVars = message => {
 
 export const validateContactInfo = (contact = {}) => {
   let errors = []
-  const fields = ['firstName', 'lastName', 'street1', 'street2', 'city', 'state', 'zip', 'company']
+  const fields = [
+    'firstName',
+    'lastName',
+    'street1',
+    'street2',
+    'city',
+    'state',
+    'zip',
+    'company',
+  ]
   const shouldBeCapped = ['firstName', 'lastName', 'street1', 'street2', 'city', 'state']
   const requiredFields = ['street1', 'city', 'state', 'zip']
   const charLimits = [
@@ -98,7 +112,9 @@ export const validateContactInfo = (contact = {}) => {
   // convert state name to initials and capitalize
   if (contact.state) {
     if (contact.state.length === 2) {
-      const stateObj = US_STATES.find(state => state.abbr.toLowerCase() === contact.state.toLowerCase())
+      const stateObj = US_STATES.find(
+        state => state.abbr.toLowerCase() === contact.state.toLowerCase()
+      )
       if (!stateObj) {
         errors.push({
           identifier: contact.state,
@@ -134,6 +150,15 @@ export const validateContactInfo = (contact = {}) => {
         .replace(/ [SS][Ee] /g, ' SE ')
         .replace(/ [Aa]venue/g, ' Ave')
         .replace(/ [Bb]oulevard/g, ' Blvd')
+        .replace(/ [Cs]auseway/g, ' CSWY')
+        .replace(/ [Cc]ircle/g, ' Cir')
+        .replace(/ [Ee]xpressway/g, ' EXPY')
+        .replace(/ [Ff]reeway/g, ' Fwy')
+        .replace(/ [Gg]ateway/g, ' GTWY')
+        .replace(/ [Hh]ighway/g, ' Hwy')
+        .replace(/ [Tt]urnpike/g, ' TPKE')
+        .replace(/ [Uu]nderpass/g, ' UPAS')
+        .replace(/ [Rr]oute/g, ' RTE')
     }
   })
 
