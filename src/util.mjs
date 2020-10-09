@@ -220,7 +220,7 @@ export const getCreditPrice = numberNeeded => {
 }
 
 // returns an array of invalid chars used otherwise null
-const invalidCharsUsed = text => {
+export const invalidCharsUsed = text => {
   var invChars = []
 
   Object.entries(text).forEach(([index, val]) => {
