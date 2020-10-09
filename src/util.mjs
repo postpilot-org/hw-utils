@@ -5,6 +5,7 @@ import {
   TWO_LETTER_NAMES,
   INVALID_CHARS_ASCII,
 } from './constants.mjs'
+import uniq from 'lodash/uniq'
 
 // function toTitleCase(str = '') {
 //   return str.replace(/\w\S*/g, function(txt) {
