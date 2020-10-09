@@ -221,7 +221,7 @@ export const getCreditPrice = numberNeeded => {
 }
 
 // returns an array of invalid chars used otherwise null
-export const invalidCharsUsed = text => {
+export const invalidCharsUsed = (text, ignored) => {
   var invChars = []
 
   Object.entries(text).forEach(([index, val]) => {
@@ -235,6 +235,10 @@ export const invalidCharsUsed = text => {
       invChars.push(val)
     }
   })
+
+  for (const i of ignored) {
+    invChars = invChars.filter(char => char != i)
+  }
 
   return uniq(invChars)
 }
