@@ -228,7 +228,7 @@ export const invalidCharsUsed = text => {
     // if the current letter or symbol exists in the
     if (
       charCode > 126 ||
-      constants.INVALID_CHARS_ASCII.find(([asciiCode]) => asciiCode === charCode)
+      INVALID_CHARS_ASCII.find(([asciiCode]) => asciiCode === charCode)
     ) {
       // check that the invalid character doesnt already exist in the list of invalid characters
       invChars.push(val)
