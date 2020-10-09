@@ -3,6 +3,7 @@ import {
   INVALID_CHARACTERS,
   US_STATES,
   TWO_LETTER_NAMES,
+  INVALID_CHARS_ASCII,
 } from './constants.mjs'
 
 // function toTitleCase(str = '') {
@@ -136,7 +137,7 @@ export const validateContactInfo = (contact = {}) => {
     }
   }
 
-  // shorten address where possible
+  // shorten address where possible http://www.gis.co.clay.mn.us/usps.htm
   abbreviatables.forEach(a => {
     if (contact[a]) {
       contact[a] = (contact[a] || '')
@@ -216,4 +217,23 @@ export const getCreditPrice = numberNeeded => {
   } else {
     return 2.99
   }
+}
+
+// returns an array of invalid chars used otherwise null
+const invalidCharsUsed = text => {
+  var invChars = []
+
+  Object.entries(text).forEach(([index, val]) => {
+    var charCode = val.charCodeAt(0)
+    // if the current letter or symbol exists in the
+    if (
+      charCode > 126 ||
+      constants.INVALID_CHARS_ASCII.find(([asciiCode]) => asciiCode === charCode)
+    ) {
+      // check that the invalid character doesnt already exist in the list of invalid characters
+      invChars.push(val)
+    }
+  })
+
+  return uniq(invChars)
 }
