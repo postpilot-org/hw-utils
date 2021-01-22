@@ -163,10 +163,6 @@ export const PLAN_DETAILS = {
         key: 'Support',
         value: 'Email',
       },
-      {
-        key: 'Sent within',
-        value: '72 hours',
-      },
     ],
   },
   tier_2: {
@@ -190,10 +186,6 @@ export const PLAN_DETAILS = {
       {
         key: 'Support',
         value: 'Email & Phone',
-      },
-      {
-        key: 'Sent within',
-        value: '48 hours',
       },
     ],
   },
@@ -219,10 +211,6 @@ export const PLAN_DETAILS = {
         key: 'Support',
         value: 'Email & Phone',
       },
-      {
-        key: 'Sent within',
-        value: '48 hours',
-      },
     ],
   },
   tier_4: {
@@ -247,10 +235,6 @@ export const PLAN_DETAILS = {
         key: 'Support',
         value: 'Email & Phone',
       },
-      {
-        key: 'Sent within',
-        value: '24 hours',
-      },
     ],
   },
   legacy_silver: {
@@ -270,10 +254,6 @@ export const PLAN_DETAILS = {
       {
         key: 'Support',
         value: 'Email & Phone',
-      },
-      {
-        key: 'Sent within',
-        value: '72 hours',
       },
     ],
   },
@@ -296,10 +276,6 @@ export const PLAN_DETAILS = {
         key: 'Support',
         value: 'Email & Phone',
       },
-      {
-        key: 'Sent within',
-        value: '72 hours',
-      },
     ],
   },
 
@@ -320,10 +296,6 @@ export const PLAN_DETAILS = {
       {
         key: 'Support',
         value: 'Email & Phone',
-      },
-      {
-        key: 'Sent within',
-        value: '72 hours',
       },
     ],
   },
@@ -346,10 +318,6 @@ export const PLAN_DETAILS = {
         key: 'Support',
         value: 'Email & Phone',
       },
-      {
-        key: 'Sent within',
-        value: '72 hours',
-      },
     ],
   },
   legacy_platinum_100: {
@@ -369,10 +337,6 @@ export const PLAN_DETAILS = {
       {
         key: 'Support',
         value: 'Email & Phone',
-      },
-      {
-        key: 'Sent within',
-        value: '72 hours',
       },
     ],
   },
@@ -394,10 +358,6 @@ export const PLAN_DETAILS = {
         key: 'Support',
         value: 'Email & Phone',
       },
-      {
-        key: 'Sent within',
-        value: '48 hours',
-      },
     ],
   },
   legacy_avalon: {
@@ -417,10 +377,6 @@ export const PLAN_DETAILS = {
       {
         key: 'Support',
         value: 'Email & Phone',
-      },
-      {
-        key: 'Sent within',
-        value: '72 hours',
       },
     ],
   },
