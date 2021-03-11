@@ -15,24 +15,24 @@ import uniq from 'lodash/uniq'
 
 function toTitleCase(str) {
   str = str ? str : ''
-  return str.replace(/(^|\s)([a-z])/g, function(m, p1, p2) {
+  return str.replace(/(^|\s)([a-z])/g, function (m, p1, p2) {
     return p1 + p2.toUpperCase()
   })
 }
 
-export const usesInvalidCharacters = message => {
+export const usesInvalidCharacters = (message) => {
   return new RegExp(INVALID_CHARACTERS, 'g').test(message)
 }
 
-export const stateAbbr = stateName => {
+export const stateAbbr = (stateName) => {
   const stateObj =
-    US_STATES.find(state => state.name.toLowerCase() === stateName.toLowerCase()) ||
-    US_STATES.find(state => state.abbr.toLowerCase() === stateName.toLowerCase())
+    US_STATES.find((state) => state.name.toLowerCase() === stateName.toLowerCase()) ||
+    US_STATES.find((state) => state.abbr.toLowerCase() === stateName.toLowerCase())
 
   return !stateObj ? '' : stateObj.abbr.toUpperCase()
 }
 
-export const validateMergeVars = message => {
+export const validateMergeVars = (message) => {
   const vars = message.match(/(\{.+?\})/gm)
   let illegals = []
 
@@ -40,7 +40,7 @@ export const validateMergeVars = message => {
     return illegals
   }
 
-  vars.forEach(mv => {
+  vars.forEach((mv) => {
     if (!VALID_MERGE_VARS.includes(mv)) {
       illegals.push(mv)
     }
@@ -79,7 +79,7 @@ export const validateContactInfo = (contact = {}) => {
   }
 
   // check for required fields
-  requiredFields.forEach(f => {
+  requiredFields.forEach((f) => {
     if (!contact[f]) {
       errors.push({
         identifier: f,
@@ -89,7 +89,7 @@ export const validateContactInfo = (contact = {}) => {
   })
 
   // check for illegal characters
-  fields.forEach(f => {
+  fields.forEach((f) => {
     if (contact[f] && usesInvalidCharacters(contact[f])) {
       errors.push({
         identifier: f,
@@ -99,7 +99,7 @@ export const validateContactInfo = (contact = {}) => {
   })
 
   // capitalize certain fields
-  shouldBeCapped.forEach(field => {
+  shouldBeCapped.forEach((field) => {
     if (
       field === 'firstName' &&
       contact[field].length === 2 &&
@@ -115,7 +115,7 @@ export const validateContactInfo = (contact = {}) => {
   if (contact.state) {
     if (contact.state.length === 2) {
       const stateObj = US_STATES.find(
-        state => state.abbr.toLowerCase() === contact.state.toLowerCase()
+        (state) => state.abbr.toLowerCase() === contact.state.toLowerCase()
       )
       if (!stateObj) {
         errors.push({
@@ -139,7 +139,7 @@ export const validateContactInfo = (contact = {}) => {
   }
 
   // shorten address where possible http://www.gis.co.clay.mn.us/usps.htm
-  abbreviatables.forEach(a => {
+  abbreviatables.forEach((a) => {
     if (contact[a]) {
       contact[a] = (contact[a] || '')
         .replace(/ [Nn]orthwest/g, ' NW')
@@ -165,7 +165,7 @@ export const validateContactInfo = (contact = {}) => {
   })
 
   // limit max characters
-  charLimits.forEach(f => {
+  charLimits.forEach((f) => {
     const fieldLength = (contact[f[0]] || '').length || 0
     const maxLength = f[1]
     if (fieldLength > maxLength) {
@@ -176,11 +176,10 @@ export const validateContactInfo = (contact = {}) => {
     }
   })
 
-  // zip code must be five characters
-  if (contact.zip && contact.zip.length !== 5) {
+  if (contact.zip && !/^\b\d{5}(-\d{4})?\b$/.test(contact.zip.toString())) {
     errors.push({
       identifier: 'Zip code',
-      errorMsg: 'must be exactly 5 digits',
+      errorMsg: 'must be formatted properly',
     })
   }
 
@@ -204,7 +203,7 @@ export const interpolate = (str = '', obj) => {
   })
 }
 
-export const getCreditPrice = numberNeeded => {
+export const getCreditPrice = (numberNeeded) => {
   if (numberNeeded <= 99) {
     return 2.99
   } else if (numberNeeded > 99 && numberNeeded <= 249) {
@@ -237,7 +236,7 @@ export const invalidCharsUsed = (text, ignored = '') => {
   })
 
   for (const i of ignored) {
-    invChars = invChars.filter(char => char != i)
+    invChars = invChars.filter((char) => char != i)
   }
 
   return uniq(invChars)
