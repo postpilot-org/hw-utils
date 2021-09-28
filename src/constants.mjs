@@ -123,7 +123,6 @@ export const INVALID_CHARS_ASCII = [
   [30, 'Record Separator'],
   [31, 'Unit Separator'],
   [34, '"'],
-  [42, '*'],
   [60, '<'],
   [61, '='],
   [62, '>'],
