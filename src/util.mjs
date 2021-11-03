@@ -64,10 +64,10 @@ export const validateContactInfo = (contact = {}) => {
   const shouldBeCapped = ['firstName', 'lastName', 'street1', 'street2', 'city', 'state']
   const requiredFields = ['street1', 'city', 'state', 'zip']
   const charLimits = [
-    ['street1', 27],
-    ['firstName', 17],
-    ['lastName', 17],
-    ['company', 26],
+    ['street1', 64],
+    ['firstName', 20],
+    ['lastName', 20],
+    ['company', 40],
   ]
   const abbreviatables = ['street1', 'street2']
 
