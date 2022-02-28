@@ -133,7 +133,6 @@ export const INVALID_CHARS_ASCII = [
   [123, '{'],
   [124, '|'],
   [125, '}'],
-  [126, '~'],
 ]
 
 export const PLAN_DETAILS = {
