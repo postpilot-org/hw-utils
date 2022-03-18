@@ -231,12 +231,17 @@ export const invalidCharsUsed = (text, ignored = '') => {
       INVALID_CHARS_ASCII.find(([asciiCode]) => asciiCode === charCode)
     ) {
       // check that the invalid character doesnt already exist in the list of invalid characters
+      // reference https://www.ascii-code.com/
       var validSpanishCharacterCodes = [
+        161, // "¡"
+        191, // "¿"
         225, // "á"
         233, // "é"
         237, // "í"
         241, // "ñ"
         243, // "ó"
+        250, // "ú"
+        252, // "ü"
       ]
       if (!validSpanishCharacterCodes.includes(charCode)) {
         invChars.push(val)
